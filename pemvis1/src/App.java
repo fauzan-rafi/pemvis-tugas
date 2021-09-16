@@ -123,6 +123,26 @@ public class App extends JFrame {
         cLabelPanel.setText("Panel C");
 
         GroupLayout cPanelLayout = new GroupLayout(cPanel);
+
+        dPanel.setBackground(new Color(240, 240, 240));
+        dLabelPanel.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        dLabelPanel.setForeground(new java.awt.Color(0, 255, 255));
+        dLabelPanel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        dLabelPanel.setText("Panel D");
+
+        GroupLayout dPanelLayout = new GroupLayout(dPanel);
+
+        ePanel.setBackground(new Color(240, 240, 240));
+        eLabelPanel.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        eLabelPanel.setForeground(new java.awt.Color(0, 255, 0));
+        eLabelPanel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        eLabelPanel.setText("Panel E");
+
+        GroupLayout ePanelLayout = new GroupLayout(ePanel);
+
+
+
+
         
     }
 
