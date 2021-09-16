@@ -108,7 +108,21 @@ public class App extends JFrame {
         GroupLayout aPanelLayout = new GroupLayout(aPanel);
         // kalian lanjut mulai dari sini guys
 
+        bPanel.setBackground(new Color(240, 240, 240));
+        bLabelPanel.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        bLabelPanel.setForeground(new java.awt.Color(000, 000, 000));
+        bLabelPanel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        bLabelPanel.setText("Panel B");
 
+        GroupLayout bPanelLayout = new GroupLayout(bPanel);
+
+        cPanel.setBackground(new Color(240, 240, 240));
+        cLabelPanel.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        cLabelPanel.setForeground(new java.awt.Color(0, 0, 153));
+        cLabelPanel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        cLabelPanel.setText("Panel C");
+
+        GroupLayout cPanelLayout = new GroupLayout(cPanel);
         
     }
 
