@@ -106,6 +106,8 @@ public class App extends JFrame {
         aPanelLabel.setText("Panel A");
 
         GroupLayout aPanelLayout = new GroupLayout(aPanel);
+        // kalian lanjut mulai dari sini guys
+
 
         
     }
