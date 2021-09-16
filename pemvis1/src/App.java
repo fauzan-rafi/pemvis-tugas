@@ -43,7 +43,7 @@ public class App extends JFrame {
         judulLabel.setFont(new java.awt.Font("Ubuntu",1,15));
         judulLabel.setText("Contoh Swing Panel 1");
 
-        // init component button
+        // init component & function button
         aButton.setText("Panel A");
         aButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -105,8 +105,28 @@ public class App extends JFrame {
         aPanelLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         aPanelLabel.setText("Panel A");
 
+        // memasukan layout panel a menjadi bagian dari grouplayout
         GroupLayout aPanelLayout = new GroupLayout(aPanel);
-        // kalian lanjut mulai dari sini guys
+        aPanel.setLayout(aPanelLayout);
+        aPanelLayout.setHorizontalGroup(
+            aPanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING).
+            addGroup(aPanelLayout.createSequentialGroup()
+            .addGap(247, 247, 247)
+            .addComponent(aPanelLabel)
+            .addContainerGap(399, Short.MAX_VALUE))
+        );
+        aPanelLayout.setVerticalGroup(
+            aPanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING).
+            addGroup(aPanelLayout.createSequentialGroup()
+            .addGap(144, 144, 144)
+            .addComponent(aPanelLabel)
+            .addContainerGap(192, Short.MAX_VALUE))
+        );
+        // ---------------------------------------
+        
+        // memasukan layout panel b menjadi bagian dari grouplayout
+
+        mainPanel.add(aPanel, "card2");
 
         bPanel.setBackground(new Color(240, 240, 240));
         bLabelPanel.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
@@ -114,7 +134,29 @@ public class App extends JFrame {
         bLabelPanel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         bLabelPanel.setText("Panel B");
 
-        GroupLayout bPanelLayout = new GroupLayout(bPanel);
+        GroupLayout bPaneLayout = new GroupLayout(aPanel);
+        bPanel.setLayout(bPaneLayout);
+        bPaneLayout.setHorizontalGroup(
+            bPaneLayout.createParallelGroup(GroupLayout.Alignment.LEADING).
+            addGroup(bPaneLayout.createSequentialGroup()
+            .addGap(249, 249, 249)
+            .addComponent(bLabelPanel)
+            .addContainerGap(398, Short.MAX_VALUE))
+        );
+        bPaneLayout.setVerticalGroup(
+            bPaneLayout.createParallelGroup(GroupLayout.Alignment.LEADING).
+            addGroup(bPaneLayout.createSequentialGroup()
+            .addGap(147, 147, 147)
+            .addComponent(bLabelPanel)
+            .addContainerGap(189, Short.MAX_VALUE))
+        );
+
+        mainPanel.add(bPanel, "card3");
+        // --------------------------------------------------------
+
+
+        // memasukan layout panel c menjadi bagian dari grouplayout
+
 
         cPanel.setBackground(new Color(240, 240, 240));
         cLabelPanel.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
@@ -122,27 +164,135 @@ public class App extends JFrame {
         cLabelPanel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         cLabelPanel.setText("Panel C");
 
-        GroupLayout cPanelLayout = new GroupLayout(cPanel);
+        
+        mainPanel.add(cPanel, "card4");
 
+        GroupLayout cPanelLayout = new GroupLayout(cPanel);
+        cPanel.setLayout(cPanelLayout);
+        cPanelLayout.setHorizontalGroup(
+            cPanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING).
+            addGroup(cPanelLayout.createSequentialGroup()
+            .addGap(229, 229, 229)
+            .addComponent(cLabelPanel)
+            .addContainerGap(418, Short.MAX_VALUE))
+        );
+        cPanelLayout.setVerticalGroup(
+            cPanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING).
+            addGroup(cPanelLayout.createSequentialGroup()
+            .addGap(144, 144, 144)
+            .addComponent(cLabelPanel)
+            .addContainerGap(192, Short.MAX_VALUE))
+        );
+
+        // --------------------------------------------------------
+
+        // memasukan layout panel d menjadi bagian dari grouplayout
         dPanel.setBackground(new Color(240, 240, 240));
         dLabelPanel.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
         dLabelPanel.setForeground(new java.awt.Color(0, 255, 255));
         dLabelPanel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         dLabelPanel.setText("Panel D");
 
-        GroupLayout dPanelLayout = new GroupLayout(dPanel);
+        mainPanel.add(dPanel, "card5");
 
+        GroupLayout dPanelLayout = new GroupLayout(dPanel);
+        dPanel.setLayout(dPanelLayout);
+        dPanelLayout.setHorizontalGroup(
+            dPanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING).
+            addGroup(dPanelLayout.createSequentialGroup()
+            .addGap(259, 259, 259)
+            .addComponent(dLabelPanel)
+            .addContainerGap(386, Short.MAX_VALUE))
+        );
+        dPanelLayout.setVerticalGroup(
+            dPanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING).
+            addGroup(dPanelLayout.createSequentialGroup()
+            .addGap(142, 142, 142)
+            .addComponent(dLabelPanel)
+            .addContainerGap(194, Short.MAX_VALUE))
+        );
+        // --------------------------------------------------------
+
+        // memasukan layout panel e menjadi bagian dari grouplayout
         ePanel.setBackground(new Color(240, 240, 240));
         eLabelPanel.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
         eLabelPanel.setForeground(new java.awt.Color(0, 255, 0));
         eLabelPanel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         eLabelPanel.setText("Panel E");
 
+        mainPanel.add(ePanel, "card6");
+
         GroupLayout ePanelLayout = new GroupLayout(ePanel);
+        ePanel.setLayout(ePanelLayout);
+        ePanelLayout.setHorizontalGroup(
+            ePanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING).
+            addGroup(ePanelLayout.createSequentialGroup()
+            .addGap(282, 282, 282)
+            .addComponent(eLabelPanel)
+            .addContainerGap(366, Short.MAX_VALUE))
+        );
+        ePanelLayout.setVerticalGroup(
+            ePanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING).
+            addGroup(ePanelLayout.createSequentialGroup()
+            .addGap(132, 132, 132)
+            .addComponent(eLabelPanel)
+            .addContainerGap(204, Short.MAX_VALUE))
+        );
+        // --------------------------------------------------------
 
+        GroupLayout layout = new GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(kembaliButton, GroupLayout.PREFERRED_SIZE, 56, GroupLayout.PREFERRED_SIZE)
+                        .addGap(33, 33, 33)
+                        .addComponent(lanjutButton, GroupLayout.PREFERRED_SIZE, 56, GroupLayout.PREFERRED_SIZE))
+                    .addGroup(GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                            .addComponent(mainPanel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jSeparator)
+                            .addComponent(judulLabel)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(aButton, GroupLayout.PREFERRED_SIZE, 84, GroupLayout.PREFERRED_SIZE)
+                                .addGap(30, 30, 30)
+                                .addComponent(bButton)
+                                .addGap(31, 31, 31)
+                                .addComponent(cButton)
+                                .addGap(33, 33, 33)
+                                .addComponent(dButton)
+                                .addGap(37, 37, 37)
+                                .addComponent(eButton)))))
+                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(judulLabel)
+                .addGap(30, 30, 30)
+                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                    .addComponent(aButton)
+                    .addComponent(cButton)
+                    .addComponent(dButton)
+                    .addComponent(eButton)
+                    .addComponent(bButton))
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator, GroupLayout.PREFERRED_SIZE, 17, GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(mainPanel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                    .addComponent(lanjutButton)
+                    .addComponent(kembaliButton))
+                .addGap(25, 25, 25))
+        );
 
-
-
+        pack();
         
     }
 
@@ -238,6 +388,11 @@ public class App extends JFrame {
 
 
     public static void main(String[] args) throws Exception {
-        
+        EventQueue.invokeLater(new Runnable(){
+            @Override
+            public void run() {
+                new App().setVisible(true);
+            }
+        });
     }
 }
