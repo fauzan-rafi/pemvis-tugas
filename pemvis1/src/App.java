@@ -16,7 +16,7 @@ public class App extends JFrame {
 
     public App() {
         initComponents();
-        setTampil();
+        // setTampil();
         setKomponen();
     }
 
@@ -168,7 +168,7 @@ public class App extends JFrame {
 
         cPanel.setBackground(new Color(240, 240, 240));
         cLabelPanel.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
-        cLabelPanel.setForeground(new java.awt.Color(0, 0, 153));
+        cLabelPanel.setForeground(new java.awt.Color(0, 0, 0));
         cLabelPanel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         cLabelPanel.setText("Panel C");
 
@@ -197,7 +197,7 @@ public class App extends JFrame {
         // memasukan layout panel d menjadi bagian dari grouplayout
         dPanel.setBackground(new Color(240, 240, 240));
         dLabelPanel.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
-        dLabelPanel.setForeground(new java.awt.Color(0, 255, 255));
+        dLabelPanel.setForeground(new java.awt.Color(0, 0, 0));
         dLabelPanel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         dLabelPanel.setText("Panel D");
 
@@ -224,7 +224,7 @@ public class App extends JFrame {
         // memasukan layout panel e menjadi bagian dari grouplayout
         ePanel.setBackground(new Color(240, 240, 240));
         eLabelPanel.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
-        eLabelPanel.setForeground(new java.awt.Color(0, 255, 0));
+        eLabelPanel.setForeground(new java.awt.Color(0, 0, 0));
         eLabelPanel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         eLabelPanel.setText("Panel E");
 
