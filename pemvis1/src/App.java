@@ -14,8 +14,15 @@ public class App extends JFrame {
     private JLabel aPanelLabel,bLabelPanel,cLabelPanel,dLabelPanel,eLabelPanel,judulLabel;
     private JSeparator jSeparator;
 
+    public App() {
+        initComponents();
+        setTampil();
+        setKomponen();
+    }
+
     // function to set layout
     private void initComponents(){
+
         judulLabel = new JLabel();
         aButton = new JButton();
         bButton = new JButton();
@@ -94,6 +101,7 @@ public class App extends JFrame {
                 lanjutButtonActionPerformed(evt);
             }
         });
+        // ---------------
 
         jSeparator.setBackground(new Color(247, 247, 247));
 
@@ -134,7 +142,7 @@ public class App extends JFrame {
         bLabelPanel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         bLabelPanel.setText("Panel B");
 
-        GroupLayout bPaneLayout = new GroupLayout(aPanel);
+        GroupLayout bPaneLayout = new GroupLayout(bPanel);
         bPanel.setLayout(bPaneLayout);
         bPaneLayout.setHorizontalGroup(
             bPaneLayout.createParallelGroup(GroupLayout.Alignment.LEADING).
@@ -311,14 +319,12 @@ public class App extends JFrame {
     }
 
     // function to menampilkan panel
-    private void setTampil() {
-        // for looping to fill panel & button with color
+    private void setTampil(){
         for(int i = 0; i < arrPanel.length; i++){
             // memberi warna semua button
             arrButton[i].setBackground(arrColor[i]);
             arrButton[i].setForeground(Color.WHITE);
             
-            // condition to show panel & button
             if(i < panelPilihan){
                 arrButton[i].setVisible(true);
                 arrPanel[i].setVisible(false);
@@ -382,12 +388,27 @@ public class App extends JFrame {
     }
     //----------------------------------------------
 
-    public App() {
-        
-    }
+    
 
 
     public static void main(String[] args) throws Exception {
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(App.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(App.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(App.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(App.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+
         EventQueue.invokeLater(new Runnable(){
             @Override
             public void run() {
