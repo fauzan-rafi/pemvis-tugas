@@ -8,6 +8,7 @@ public class Latihan2 extends JFrame{
     // instance obj
     JLabel judul,lblNim,lblNama,lblNilai;
     JTextField fldNim,fldNama,fldNilai;
+    JTextArea txtShow;
     JButton btnSubmit,btnReset;
 
     public Latihan2() {
@@ -15,7 +16,7 @@ public class Latihan2 extends JFrame{
     }
 
     public void initComponents() {
-        setSize(960, 600);
+        setSize(960, 700);
         // membuat judul
         setTitle("Tantangan JTextField & Textarea");
         // close operation
@@ -32,7 +33,7 @@ public class Latihan2 extends JFrame{
         judul = new JLabel("Program mahasiswa");
         // set font label judul
         judul.setFont(new Font("Ubuntu",1,17));
-        judul.setBounds(400,30,170,50); // mengatur posisi 
+        judul.setBounds(420,30,170,50); // mengatur posisi 
         add(judul);
 
         // add component lbl nim
@@ -69,6 +70,19 @@ public class Latihan2 extends JFrame{
         fldNilai.setBorder(new LineBorder(Color.BLACK,2));
         add(fldNilai);
 
+        // add text area
+        txtShow = new JTextArea();
+        txtShow.setBounds(300, 375, 200, 200);
+        txtShow.setSize(450,250);  
+        txtShow.setLayout(null);  
+        txtShow.setVisible(true);  
+        // txtShow.setEditable(false);
+        txtShow.setFont(new Font("Ubuntu",1,15));
+        txtShow.setLineWrap(true);
+        txtShow.setWrapStyleWord(true);
+        txtShow.setBackground(new Color(224, 192, 151));
+        add(txtShow);
+
         // add button Submit
         btnSubmit = new JButton("Submit");
         btnSubmit.setFont(new Font("Ubuntu",1,15));
@@ -81,6 +95,8 @@ public class Latihan2 extends JFrame{
         btnReset.setBackground(new Color(255, 120, 120));
         btnReset.setBounds(200,315,100,30); // mengatur posisi button
         add(btnReset);
+
+
         // ---------------------------------------------------------------
         ArrayList<Data> input = new ArrayList<Data>();
 
@@ -96,10 +112,9 @@ public class Latihan2 extends JFrame{
                 fldNim.setText("");
                 fldNama.setText("");
                 fldNilai.setText("");
+                refreshData(txtShow, input);
             }
         });
-        
-
         
         // menambah action pada button
         btnReset.addActionListener(new ActionListener(){
@@ -110,15 +125,18 @@ public class Latihan2 extends JFrame{
             }
         });
         
-        
+
+    }
+    public void refreshData(JTextArea txtAr, ArrayList<Data> input) {
+        String output = "";
+        for(int i = 0; i < input.size();i++){
+            output += input.get(i).nama +","+ input.get(i).nim +","+ input.get(i).nilai;
+            output += "\n";
+       }
+       txtAr.setText(output);
 
     }
 
-    public void runProg() {
-        
-
-
-    }
     public static void main(String[] args) {
         Latihan2 app = new Latihan2();
     }
