@@ -2,13 +2,19 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.border.LineBorder;
+import java.util.*;
 
 public class Latihan2 extends JFrame{
+    // instance obj
     JLabel judul,lblNim,lblNama,lblNilai;
     JTextField fldNim,fldNama,fldNilai;
     JButton btnSubmit,btnReset;
+
     public Latihan2() {
-        Dimension dimensiLayar = Toolkit.getDefaultToolkit().getScreenSize();
+        this.initComponents();
+    }
+
+    public void initComponents() {
         setSize(960, 600);
         // membuat judul
         setTitle("Tantangan JTextField & Textarea");
@@ -68,32 +74,52 @@ public class Latihan2 extends JFrame{
         btnSubmit.setFont(new Font("Ubuntu",1,15));
         btnSubmit.setBackground(new Color(206, 229, 208));
         btnSubmit.setBounds(375,315,100,30); // mengatur posisi button
-        // menambah acction pada button
-        btnSubmit.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e) {
-                
-            }
-        });
         add(btnSubmit);
-
         // add button Reset
         btnReset = new JButton("Reset");
         btnReset.setFont(new Font("Ubuntu",1,15));
         btnReset.setBackground(new Color(255, 120, 120));
         btnReset.setBounds(200,315,100,30); // mengatur posisi button
-        // menambah acction pada button
-        btnReset.addActionListener(new ActionListener(){
+        add(btnReset);
+        // ---------------------------------------------------------------
+        ArrayList<Data> input = new ArrayList<Data>();
+
+       
+        // menambah action pada button
+        btnSubmit.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e) {
-                
+                String x = fldNama.getText();
+                int y = Integer.parseInt(fldNim.getText());
+                float z = Float.parseFloat(fldNilai.getText());
+                Data mhs = new Data(x,y,z);
+    	        input.add(mhs);
+                fldNim.setText("");
+                fldNama.setText("");
+                fldNilai.setText("");
             }
         });
-        add(btnReset);
+        
+
+        
+        // menambah action pada button
+        btnReset.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e) {
+                fldNim.setText("");
+                fldNama.setText("");
+                fldNilai.setText("");
+            }
+        });
+        
         
 
     }
 
+    public void runProg() {
+        
+
+
+    }
     public static void main(String[] args) {
         Latihan2 app = new Latihan2();
-        
     }
 }
