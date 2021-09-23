@@ -1,3 +1,4 @@
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -113,31 +114,23 @@ public class Latihan2 extends JFrame{
         btnReset.setBackground(new Color(255, 120, 120));
         btnReset.setBounds(200,315,100,30); // mengatur posisi button
         add(btnReset);
+
         // add buttonIcon Atas
-        Icon icon = new ImageIcon("E:\\211623_b_up_arrow_icon.PNG");
-        btnAtas  = new JButton(icon);
-        btnAtas.setBounds(630,315,70,30); // mengatur posisi button
-               add(btnAtas);
+        btnAtas  = new JButton("ASC");
+        btnAtas.setFont(new Font("Ubuntu",1,12));
+        btnAtas.setBounds(600,315,70,30); // mengatur posisi button
+        add(btnAtas);
         
         // add buttonIcon Bawah
-        Icon icon1 = new ImageIcon("E:\\211614_down_b_arrow_icon.PNG");
-        btnBawah = new JButton(icon1);
+        btnBawah = new JButton("DESC");
+        btnBawah.setFont(new Font("Ubuntu",1,12));
         btnBawah.setBounds(700,315,70,30); // mengatur posisi button
         add(btnBawah);
-       
-        
-        
 
-
-       
-       
-        
-
-
+        // program utama
         // ---------------------------------------------------------------
         ArrayList<Data> input = new ArrayList<Data>();
 
-       
         // menambah action pada button
         btnSubmit.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e) {
@@ -161,6 +154,22 @@ public class Latihan2 extends JFrame{
                 fldNilai.setText("");
             }
         });
+
+        // action pada button search asc
+        btnAtas.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e) {
+                sortingMhs(input);
+                showData(txtShow, input, fldSearch);
+            }
+        });
+
+        // action pada button search desc
+        btnBawah.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e) {
+                sortingMhsDesc(input);
+                showData(txtShow, input, fldSearch);
+            }
+        });
         
 
     }
@@ -171,7 +180,45 @@ public class Latihan2 extends JFrame{
             output += "\n";
        }
        txtAr.setText(output);
+    }
 
+    public void showData(JTextArea txtAr, ArrayList<Data> input, JTextField userParams) {
+        String output = "";
+        int i = Integer.parseInt(userParams.getText()) - 1;
+        if (i < input.size()) {   
+            output += input.get(i).nama +","+ input.get(i).nim +","+ input.get(i).nilai;
+            output += "\n";
+        }else{
+            output += "Data yang anda masukan salah";
+        }
+       
+       txtAr.setText(output);
+    }
+
+    public void sortingMhs(ArrayList<Data> input){
+        int n = input.size();  
+           for(int i = 1; i < n; ++i) {  
+    			Data key = input.get(i);
+                int j = i - 1;
+                while (j >= 0 && input.get(j).nilai > key.nilai) {
+                    input.set(j + 1,input.get(j));
+                    j = j - 1;
+                }
+                input.set(j + 1,key);
+            } 
+    }
+    
+    public void sortingMhsDesc(ArrayList<Data> input){
+        int n = input.size();  
+           for(int i = 1; i < n; ++i) {  
+    			Data key = input.get(i);
+                int j = i - 1;
+                while (j >= 0 && input.get(j).nilai < key.nilai) {
+                    input.set(j + 1,input.get(j));
+                    j = j - 1;
+                }
+                input.set(j + 1,key);
+            } 
     }
 
     public static void main(String[] args) {
