@@ -105,13 +105,13 @@ public class Latihan2 extends JFrame{
         // add buttonIcon Atas
         Icon icon = new ImageIcon("E:\\211623_b_up_arrow_icon.PNG");
         btnAtas  = new JButton(icon);
-        btnAtas.setBounds(500,305,70,30); // mengatur posisi button
+        btnAtas.setBounds(570,315,70,30); // mengatur posisi button
                add(btnAtas);
         
         // add buttonIcon Bawah
         Icon icon1 = new ImageIcon("E:\\211614_down_b_arrow_icon.PNG");
         btnBawah = new JButton(icon1);
-        btnBawah.setBounds(500,335,70,30); // mengatur posisi button
+        btnBawah.setBounds(650,315,70,30); // mengatur posisi button
         add(btnBawah);
        
         
