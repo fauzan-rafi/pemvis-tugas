@@ -9,8 +9,8 @@ import javax.swing.Box.*;
 
 public class Latihan2 extends JFrame{
     // instance obj
-    JLabel judul,lblNim,lblNama,lblNilai;
-    JTextField fldNim,fldNama,fldNilai;
+    JLabel judul,lblNim,lblNama,lblNilai,lblSearch;
+    JTextField fldNim,fldNama,fldNilai,fldSearch;
     JTextArea txtShow;
     TitledBorder border1;
     JScrollPane scrollPane1;
@@ -56,6 +56,11 @@ public class Latihan2 extends JFrame{
         lblNilai.setFont(new Font("Ubuntu",1,15));
         lblNilai.setBounds(200,250,150,40); // mengatur posisi 
         add(lblNilai);
+        // add component lbl Search
+        lblSearch = new JLabel("Search :");
+        lblSearch.setFont(new Font("Ubuntu",1,15));
+        lblSearch.setBounds(500,250,150,40); // mengatur posisi 
+        add(lblSearch);
 
         // add component nim
         fldNim = new JTextField();
@@ -74,6 +79,12 @@ public class Latihan2 extends JFrame{
         fldNilai.setBounds(300,250,170,40); // mengatur posisi 
         fldNilai.setBorder(new LineBorder(Color.BLACK,2));
         add(fldNilai);
+
+        // add component Search
+        fldSearch = new JTextField();
+        fldSearch.setBounds(600,250,170,40); // mengatur posisi 
+        fldSearch.setBorder(new LineBorder(Color.BLACK,2));
+        add(fldSearch);
 
         // add text area
         txtShow = new JTextArea();
@@ -105,13 +116,13 @@ public class Latihan2 extends JFrame{
         // add buttonIcon Atas
         Icon icon = new ImageIcon("E:\\211623_b_up_arrow_icon.PNG");
         btnAtas  = new JButton(icon);
-        btnAtas.setBounds(570,315,70,30); // mengatur posisi button
+        btnAtas.setBounds(630,315,70,30); // mengatur posisi button
                add(btnAtas);
         
         // add buttonIcon Bawah
         Icon icon1 = new ImageIcon("E:\\211614_down_b_arrow_icon.PNG");
         btnBawah = new JButton(icon1);
-        btnBawah.setBounds(650,315,70,30); // mengatur posisi button
+        btnBawah.setBounds(700,315,70,30); // mengatur posisi button
         add(btnBawah);
        
         
