@@ -9,7 +9,7 @@ public class Latihan2 extends JFrame{
     JLabel judul,lblNim,lblNama,lblNilai;
     JTextField fldNim,fldNama,fldNilai;
     JTextArea txtShow;
-    JButton btnSubmit,btnReset;
+    JButton btnSubmit,btnReset,btnSearch;
 
     public Latihan2() {
         this.initComponents();
@@ -95,6 +95,13 @@ public class Latihan2 extends JFrame{
         btnReset.setBackground(new Color(255, 120, 120));
         btnReset.setBounds(200,315,100,30); // mengatur posisi button
         add(btnReset);
+        // add button Search
+        btnSearch = new JButton("Search");
+        btnSearch.setFont(new Font("Ubuntu",1,15));
+        btnSearch.setBackground(new Color(0, 255, 0));
+        btnSearch.setBounds(550,315,100,30); // mengatur posisi button
+        add(btnSearch);
+        
 
 
         // ---------------------------------------------------------------
