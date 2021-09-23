@@ -3,6 +3,9 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.border.*;
 import java.util.*;
+import javax.swing.Icon.*;
+import javax.swing.ImageIcon.*;
+import javax.swing.Box.*;
 
 public class Latihan2 extends JFrame{
     // instance obj
@@ -11,7 +14,7 @@ public class Latihan2 extends JFrame{
     JTextArea txtShow;
     TitledBorder border1;
     JScrollPane scrollPane1;
-    JButton btnSubmit,btnReset,btnSearch;
+    JButton btnSubmit,btnReset,btnAtas,btnBawah;
 
     public Latihan2() {
         this.initComponents();
@@ -99,12 +102,24 @@ public class Latihan2 extends JFrame{
         btnReset.setBackground(new Color(255, 120, 120));
         btnReset.setBounds(200,315,100,30); // mengatur posisi button
         add(btnReset);
-        // add button Search
-        btnSearch = new JButton("Search");
-        btnSearch.setFont(new Font("Ubuntu",1,15));
-        btnSearch.setBackground(new Color(0, 255, 0));
-        btnSearch.setBounds(550,315,100,30); // mengatur posisi button
-        add(btnSearch);
+        // add buttonIcon Atas
+        Icon icon = new ImageIcon("E:\\211623_b_up_arrow_icon.PNG");
+        btnAtas  = new JButton(icon);
+        btnAtas.setBounds(500,305,70,30); // mengatur posisi button
+               add(btnAtas);
+        
+        // add buttonIcon Bawah
+        Icon icon1 = new ImageIcon("E:\\211614_down_b_arrow_icon.PNG");
+        btnBawah = new JButton(icon1);
+        btnBawah.setBounds(500,335,70,30); // mengatur posisi button
+        add(btnBawah);
+       
+        
+        
+
+
+       
+       
         
 
 
