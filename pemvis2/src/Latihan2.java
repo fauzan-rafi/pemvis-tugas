@@ -1,7 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import javax.swing.border.LineBorder;
+import javax.swing.border.*;
 import java.util.*;
 
 public class Latihan2 extends JFrame{
@@ -9,6 +9,8 @@ public class Latihan2 extends JFrame{
     JLabel judul,lblNim,lblNama,lblNilai;
     JTextField fldNim,fldNama,fldNilai;
     JTextArea txtShow;
+    TitledBorder border1;
+    JScrollPane scrollPane1;
     JButton btnSubmit,btnReset,btnSearch;
 
     public Latihan2() {
@@ -81,6 +83,8 @@ public class Latihan2 extends JFrame{
         txtShow.setLineWrap(true);
         txtShow.setWrapStyleWord(true);
         txtShow.setBackground(new Color(224, 192, 151));
+        scrollPane1 = new JScrollPane(txtShow);
+        scrollPane1.setBorder(new TitledBorder("Data Mahasiswa"));
         add(txtShow);
 
         // add button Submit
