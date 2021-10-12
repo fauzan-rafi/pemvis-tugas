@@ -157,7 +157,7 @@ public class SwingCheckBox extends JFrame{
                 
                 
                 if(bahasaYangDiKuasai.equals("Bahasa Yang Anda Kuasai:\n")){
-                    JOptionPane.showMessageDialog(this, "Silahkan pilih bahasa yang dikuasai" ,"ERROR", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Silahkan pilih bahasa yang dikuasai" ,"ERROR", JOptionPane.ERROR_MESSAGE);
                 }else{
                     fasilitasBelajar = "Fasilitas Belajar:\n";
                     arrJFasilitasCheckBox = new JCheckBox[]{laptopCheckBox,mejaBelajarCheckBox,papanTulisCheckBox,
@@ -168,9 +168,9 @@ public class SwingCheckBox extends JFrame{
                         }
                     }
                     if(fasilitasBelajar.equals("Fasilitas Belajar:\n")){
-                        JOptionPane.showMessageDialog(this, "Silahkan pilih fasilitas belajar" ,"ERROR", JOptionPane.ERROR_MESSAGE);  
+                        JOptionPane.showMessageDialog(null, "Silahkan pilih fasilitas belajar" ,"ERROR", JOptionPane.ERROR_MESSAGE);  
                     }else{
-                        JOptionPane.showMessageDialog(this, bahasaYangDiKuasai +"\n\n" + fasilitasBelajar ,"Hasil Pilihan CheckBox", JOptionPane.INFORMATION_MESSAGE);
+                        JOptionPane.showMessageDialog(null, bahasaYangDiKuasai +"\n\n" + fasilitasBelajar ,"Hasil Pilihan CheckBox", JOptionPane.INFORMATION_MESSAGE);
                     }
                 }
             }
