@@ -8,9 +8,7 @@ import javax.swing.JOptionPane;
 public class SwingCheckBox extends JFrame{
     JLabel judul,judulbahasa,judulFasilitas;
     JButton submitButton,resetButton;
-    JCheckBox bahasaIndonesiaCheckBox,bahasaInggrisCheckBox,bahasaJermanCheckBox,bahasaBelandaCheckBox,
-                proyektorCheckBox,papanTulisCheckBox,laptopCheckBox,smartphoneCheckBox,internetCheckBox,mejaBelajarCheckBox;
-
+    JCheckBox bahasaIndonesiaCheckBox,bahasaInggrisCheckBox,bahasaJermanCheckBox,bahasaBelandaCheckBox, proyektorCheckBox,papanTulisCheckBox,laptopCheckBox,smartphoneCheckBox,internetCheckBox,mejaBelajarCheckBox;
     String bahasaYangDiKuasai = "";
     String fasilitasBelajar = "";
     JCheckBox[] arrJFasilitasCheckBox;

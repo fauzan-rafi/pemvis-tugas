@@ -1,8 +1,9 @@
 {
     "java.project.sourcePaths": [
+        "pemvis5",
         "pemvis2/src",
         "pemvis1/src",
         "SwingComboBox",
-        "pemvis5"
+        "pemvis8"
     ]
 }
