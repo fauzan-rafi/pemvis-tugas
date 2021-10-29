@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class SwingPasswordField extends JFrame{
+public class SwingPasswordField extends JFrame {
     private JPasswordField aPasswordField, bPasswordField, cPasswordField;
     private JLabel passwordFieldLabel, jLabel1, jLabel2, jLabel3;
     private JToggleButton passwordAToggleButton, passwordBToggleButton, passwordCToggleButton;
@@ -14,8 +14,8 @@ public class SwingPasswordField extends JFrame{
     }
 
     public void initComponents() {
-        //------------------------------------------------------
-        setSize(700,600);
+        // ------------------------------------------------------
+        setSize(800, 600);
         // membuat judul
         setTitle("Tantangan JPasswordField");
         // close operation
@@ -26,107 +26,112 @@ public class SwingPasswordField extends JFrame{
         // mengatur warna
         // getContentPane().setBackground(new Color(243, 240, 215));
         setLayout(null);
-        //---------------------------------------------------------
+        // ---------------------------------------------------------
 
         passwordFieldLabel = new JLabel("Contoh Password Field 1");
         // set font label judulLabel
-        passwordFieldLabel.setFont(new Font("Ubuntu",1,20));
-        passwordFieldLabel.setBounds(75,30,350,70); // mengatur posisi 
+        passwordFieldLabel.setFont(new Font("Ubuntu", 1, 20));
+        passwordFieldLabel.setBounds(75, 30, 350, 70); // mengatur posisi
         add(passwordFieldLabel);
         // ----------------------------------------------------------
 
         jLabel1 = new JLabel("Password A");
         // set font label judulLabel
-        jLabel1.setFont(new Font("Ubuntu",1,14));
-        jLabel1.setBounds(75,125,200,30); // mengatur posisi 
+        jLabel1.setFont(new Font("Ubuntu", 1, 14));
+        jLabel1.setBounds(75, 150, 200, 30); // mengatur posisi
         add(jLabel1);
         // ----------------------------------------------------------
 
         jLabel2 = new JLabel("Password B");
         // set font label judulLabel
-        jLabel2.setFont(new Font("Ubuntu",1,14));
-        jLabel2.setBounds(75,225,200,30); // mengatur posisi 
+        jLabel2.setFont(new Font("Ubuntu", 1, 14));
+        jLabel2.setBounds(75, 250, 200, 30); // mengatur posisi
         add(jLabel2);
         // ----------------------------------------------------------
 
         jLabel3 = new JLabel("Password C");
         // set font label judulLabel
-        jLabel3.setFont(new Font("Ubuntu",1,14));
-        jLabel3.setBounds(75,325,200,30); // mengatur posisi 
+        jLabel3.setFont(new Font("Ubuntu", 1, 14));
+        jLabel3.setBounds(75, 350, 200, 30); // mengatur posisi
         add(jLabel3);
         // ----------------------------------------------------------
 
         aPasswordField = new JPasswordField();
-        aPasswordField.setFont(new Font("Ubuntu",1,14));
-        aPasswordField.setBounds(200,125,200,30); // mengatur posisi 
+        aPasswordField.setFont(new Font("Ubuntu", 1, 14));
+        aPasswordField.setBounds(200, 150, 200, 30); // mengatur posisi
         add(aPasswordField);
 
         bPasswordField = new JPasswordField();
         bPasswordField.setEchoChar('\u25cf');
-        bPasswordField.setFont(new Font("Ubuntu",1,14));
-        bPasswordField.setBounds(200,225,200,30); // mengatur posisi 
+        bPasswordField.setFont(new Font("Ubuntu", 1, 14));
+        bPasswordField.setBounds(200, 250, 200, 30); // mengatur posisi
         add(bPasswordField);
 
         cPasswordField = new JPasswordField();
         cPasswordField.setEchoChar('#');
-        cPasswordField.setFont(new Font("Ubuntu",1,14));
-        cPasswordField.setBounds(200,325,200,30); // mengatur posisi 
+        cPasswordField.setFont(new Font("Ubuntu", 1, 14));
+        cPasswordField.setBounds(200, 350, 200, 30); // mengatur posisi
         add(cPasswordField);
 
+        Icon icon = new ImageIcon(getClass().getResource("../gambar/icons8-blind-60.png"));
+
         passwordAToggleButton = new JToggleButton();
-        passwordAToggleButton.setIcon(new ImageIcon(getClass().getResource("../gambar/icons8-mute-48.png")));
-        passwordAToggleButton.setBounds(300,125,50,50);
+        passwordAToggleButton.setIcon(icon);
+        passwordAToggleButton.setBounds(450, 125, 80, 80);
         add(passwordAToggleButton);
 
         passwordBToggleButton = new JToggleButton();
-        passwordBToggleButton.setIcon(new ImageIcon(getClass().getResource("../gambar/icons8-mute-48.png")));
-        passwordBToggleButton.setBounds(300,225,50,50);
+        passwordBToggleButton.setIcon(icon);
+        passwordBToggleButton.setBounds(450, 225, 80, 80);
         add(passwordBToggleButton);
 
         passwordCToggleButton = new JToggleButton();
-        passwordCToggleButton.setIcon(new ImageIcon(getClass().getResource("../gambar/icons8-mute-48.png")));
-        passwordCToggleButton.setBounds(300,325,50,50);
+        passwordCToggleButton.setIcon(icon);
+        passwordCToggleButton.setBounds(450, 325, 80, 80);
         add(passwordCToggleButton);
 
-        passwordAToggleButton.addActionListener(new ActionListener(){
+        passwordAToggleButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                if(passwordAToggleButton.isSelected()){
+
+                if (passwordAToggleButton.isSelected()) {
                     aPasswordField.setEchoChar((char) 0);
-                    passwordAToggleButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/icons8-blind-60.png")));
-                }else{
+                    Icon iconBlind = new ImageIcon(getClass().getResource("../gambar/icons8-blind-60.png"));
+                    passwordAToggleButton.setIcon(iconBlind);
+                } else {
                     aPasswordField.setEchoChar('*');
-                    passwordAToggleButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/icons8-eye-60.png")));
+                    Icon iconEye = new ImageIcon(getClass().getResource("../gambar/icons8-eye-60.png"));
+                    passwordAToggleButton.setIcon(iconEye);
                 }
             }
         });
 
-        passwordBToggleButton.addActionListener(new ActionListener(){
+        passwordBToggleButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                if(passwordBToggleButton.isSelected()){
+                if (passwordBToggleButton.isSelected()) {
                     bPasswordField.setEchoChar('\u0000');
-                    passwordBToggleButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/icons8-blind-60.png")));
-                }else{
+                    Icon iconBlind = new ImageIcon(getClass().getResource("../gambar/icons8-blind-60.png"));
+                    passwordBToggleButton.setIcon(iconBlind);
+                } else {
                     bPasswordField.setEchoChar('\u25cf');
-                    passwordBToggleButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/icons8-eye-60.png")));
+                    Icon iconEye = new ImageIcon(getClass().getResource("../gambar/icons8-eye-60.png"));
+                    passwordBToggleButton.setIcon(iconEye);
                 }
             }
         });
 
-        passwordCToggleButton.addActionListener(new ActionListener(){
+        passwordCToggleButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                if(passwordCToggleButton.isSelected()){
+                if (passwordCToggleButton.isSelected()) {
                     cPasswordField.setEchoChar('\u0000');
-                    passwordCToggleButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/icons8-blind-60.png")));
-                }else{
+                    Icon iconBlind = new ImageIcon(getClass().getResource("../gambar/icons8-blind-60.png"));
+                    passwordCToggleButton.setIcon(iconBlind);
+                } else {
                     cPasswordField.setEchoChar('#');
-                    passwordCToggleButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/icons8-eye-60.png")));
+                    Icon iconEye = new ImageIcon(getClass().getResource("../gambar/icons8-eye-60.png"));
+                    passwordCToggleButton.setIcon(iconEye);
                 }
             }
         });
-        
-
-
-
 
     }
 

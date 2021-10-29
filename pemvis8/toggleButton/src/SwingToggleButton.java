@@ -14,7 +14,7 @@ public class SwingToggleButton extends JFrame{
 
     public void initComponents() {
         //------------------------------------------------------
-        setSize(700,400);
+        setSize(600,550);
         // membuat judul
         setTitle("Tantangan JToggleButton");
         // close operation
@@ -47,9 +47,11 @@ public class SwingToggleButton extends JFrame{
         onOffButton.setForeground(Color.white);
         add(onOffButton);
 
+        
         iconToggleButton = new JToggleButton();
-        iconToggleButton.setIcon(new ImageIcon(getClass().getResource("../gambar/icons8-mute-48.png")));
-        iconToggleButton.setBounds(75,220,150,30);
+        Icon icon = new ImageIcon(getClass().getResource("../gambar/icons8-mute-48.png"));
+        iconToggleButton.setIcon(icon);
+        iconToggleButton.setBounds(75,220,150,150);
         add(iconToggleButton);
 
         onOffToggleButton.addActionListener(new ActionListener(){
@@ -81,9 +83,11 @@ public class SwingToggleButton extends JFrame{
         iconToggleButton.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e) {
                 if(iconToggleButton.isSelected()){
-                    iconToggleButton.setIcon(new ImageIcon(getClass().getResource("pemvis8/toggleButton/gambar/icons8-mute-48.png")));
+                    Icon icon = new ImageIcon(getClass().getResource("../gambar/icons8-sound-48.png"));
+                    iconToggleButton.setIcon(icon);
                 }else{
-                    iconToggleButton.setIcon(new ImageIcon(getClass().getResource("pemvis8/toggleButton/gambar/icons8-mute-48.png")));
+                    Icon icon = new ImageIcon(getClass().getResource("../gambar/icons8-mute-48.png"));
+                    iconToggleButton.setIcon(icon);
                 }
             }
         });
